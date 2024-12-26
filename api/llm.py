@@ -5,7 +5,7 @@ import pyimgur
 
 client = OpenAI(
     api_key=os.getenv("OPENAI_API_KEY"),
-    api_base=os.getenv("OPENAI_API_BASE", "https://free.v36.cm/v1")
+    base_url=os.getenv("OPENAI_API_BASE", "https://free.v36.cm/v1")
 )
 
 class ChatGPT:
@@ -32,6 +32,7 @@ class ChatGPT:
         Returns:
         - A string representing the generated response.
         """
+        Global clinet
         response = client.chat.completions.create(
             model=self.model,
             messages=self.prompt.generate_prompt(),
