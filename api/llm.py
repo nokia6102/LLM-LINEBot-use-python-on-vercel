@@ -6,6 +6,7 @@ import pyimgur
 client = OpenAI()
 
 client.api_key = os.getenv("OPENAI_API_KEY")
+client.api_base = "https://free.v36.cm/v1"  # 設置第三方 API URL
 
 class ChatGPT:
     """
